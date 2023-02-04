@@ -22,6 +22,7 @@ mongoClient.connect(
       app.use(express.json());
       app.use(express.urlencoded({ extended: false }));
 
+      // allow other files to acces db
       app.use((req, res, next) => {
         req.db = db;
         next();
