@@ -50,12 +50,12 @@ describe("Department", () => {
       await department.save();
       expect(department.isNew).to.be.false;
     });
-    // it('should throw an error if no "name" is provided', async () => {
-    //   const department = new Department();
-    //   await department.save().catch((err) => {
-    //     expect(err.errors.name).to.exist;
-    //   });
-    // });
+    it('should throw an error if no "name" is provided', async () => {
+      const department = new Department();
+      await department.save().catch((err) => {
+        expect(err.errors.name).to.exist;
+      });
+    });
     after(async () => {
       await Department.deleteMany();
     });
