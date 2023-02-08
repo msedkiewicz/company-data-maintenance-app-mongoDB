@@ -146,9 +146,4 @@ describe("Department", () => {
       await Department.deleteMany();
     });
   });
-
-  // clear the database after each test
-  after(() => {
-    mongoose.models = {};
-  });
 });
